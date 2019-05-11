@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: hello
+  profiles:
+    active: dev
+
+# /info
+info:
+  app:
+    name: spring-boot-hello
+    version: v1.0.0
