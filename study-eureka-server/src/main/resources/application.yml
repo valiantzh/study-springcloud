@@ -1,0 +1,23 @@
+server:
+  port: 1111
+
+spring:
+    application:
+      name: eureka-server
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    #false表示不向注册中心注册自己
+    register-with-eureka: false
+    #由于注册中心就是维护服务实例，并不需要检索服务，所以fetch-registry: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false #本地开发，关闭保护机制
+
+logging:
+  file: logs/${spring.application.name}.log
