@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: studyspringcloud
+  cloud:
+    config:
+      profile: dev
+      #label: master
+      #uri: http://localhost:7001/
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+server:
+  port: 7002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
